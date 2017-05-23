@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.hp.s_100.DetailActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/txt_create_order"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/name"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="-57dp"
+        tools:layout_editor_absoluteY="-7dp" />
+
+    <EditText
+        android:id="@+id/full_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/full_name"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="-57dp"
+        tools:layout_editor_absoluteY="-7dp" />
+
+    <EditText
+        android:id="@+id/full_name_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/full_name_2"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="-57dp"
+        tools:layout_editor_absoluteY="-7dp" />
+
+    <EditText
+        android:id="@+id/e_mail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/txt_e_mail"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="-57dp"
+        tools:layout_editor_absoluteY="-7dp" />
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/telephone"
+        android:inputType="phone"
+        tools:layout_editor_absoluteX="-57dp"
+        tools:layout_editor_absoluteY="-7dp" />
+
+    <EditText
+        android:id="@+id/marka_model_auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/marka_model_auto"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="-57dp"
+        tools:layout_editor_absoluteY="-7dp" />
+
+    <Spinner
+        android:id="@+id/type_engine"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:entries="@array/type_engine" />
+
+    <Spinner
+        android:id="@+id/capacity_engine"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:entries="@array/capacity_engine"/>
+    <Spinner
+        android:id="@+id/type_body"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:entries="@array/type_body"/>
+
+    <EditText
+        android:id="@+id/name_service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/txt_name_service"
+        android:inputType="none"
+        tools:layout_editor_absoluteX="-57dp"
+        tools:layout_editor_absoluteY="-7dp" />
+
+    <Spinner
+        android:id="@+id/type_payment"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:entries="@array/type_payment"/>
+
+    <Button
+        android:id="@+id/btn_create_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:text="Оформление заказа"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+</LinearLayout>

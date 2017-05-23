@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/promotions"
+            android:icon="@drawable/ic_fiber_new_black_24dp"
+            android:title="@string/promotions_menu" />
+        <item
+            android:id="@+id/nav_car_wash"
+            android:icon="@drawable/ic_local_car_wash_black_24dp"
+            android:title="@string/wash_menu" />
+        <item
+            android:id="@+id/nav_service"
+            android:icon="@drawable/ic_build_black_24dp"
+            android:title="@string/service_menu" />
+        <item
+            android:id="@+id/nav_shop"
+            android:icon="@drawable/ic_shopping_cart_black_24dp"
+            android:title="@string/shop_menu" />
+
+        <item
+            android:id="@+id/nav_feedback"
+            android:icon="@drawable/ic_feedback_black_24dp"
+            android:title="@string/feedback_menu" />
+
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_person_black_24dp"
+            android:title="@string/about_menu" />
+
+    </group>
+
+
+</menu>
