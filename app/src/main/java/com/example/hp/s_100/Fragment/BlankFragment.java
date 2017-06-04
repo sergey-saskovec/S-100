@@ -20,6 +20,7 @@ import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -80,6 +81,8 @@ public class BlankFragment extends Fragment {
             }
 
         });
+
+
 
         return recyclerView;
     }

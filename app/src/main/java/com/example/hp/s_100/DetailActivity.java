@@ -14,6 +14,9 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 public class DetailActivity extends AppCompatActivity implements View.OnClickListener {
 
     private DatabaseReference MyRefDB;
@@ -31,6 +34,10 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
     private Spinner type_body;
     private EditText name_service;
     private Spinner type_payment;
+
+    /*private static final String TAG = "MainActivity";
+
+    private AdView mAdView;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,38 +68,49 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
 
         btn_create_order.setOnClickListener(this);
 
+       /* mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);*/
+
     }
 
     @Override
     public void onClick(View view) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Вы уверены, что ввели правильные данные?")
-                .setPositiveButton("Да", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        Order order = new Order(name.getText().toString(),
-                                full_name.getText().toString(),
-                                full_name_2.getText().toString(),
-                                e_mail.getText().toString(),
-                                phone.getText().toString(),
-                                marka_model_auto.getText().toString(),
-                                type_engine.getSelectedItem().toString(),
-                                capacity_engine.getSelectedItem().toString(),
-                                type_body.getSelectedItem().toString(),
-                                name_service.getText().toString(),
-                                type_payment.getSelectedItem().toString());
+        if (name.getText().length() == 0 || full_name.getText().length() == 0 || full_name_2.getText().length() == 0 ||
+                e_mail.getText().length() == 0 ||  phone.getText().length() == 0 || marka_model_auto.getText().length() == 0 ||
+                name_service.getText().length() == 0){
+            Toast.makeText(this, "Заполните все поля", Toast.LENGTH_LONG).show();
+        }
+        else {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("Вы уверены, что ввели правильные данные?")
+                    .setPositiveButton("Да", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            Order order = new Order(name.getText().toString(),
+                                    full_name.getText().toString(),
+                                    full_name_2.getText().toString(),
+                                    e_mail.getText().toString(),
+                                    phone.getText().toString(),
+                                    marka_model_auto.getText().toString(),
+                                    type_engine.getSelectedItem().toString(),
+                                    capacity_engine.getSelectedItem().toString(),
+                                    type_body.getSelectedItem().toString(),
+                                    name_service.getText().toString(),
+                                    type_payment.getSelectedItem().toString());
 
-                        MyRefDB.child("order").push().setValue(order);
-                        Toast.makeText(getApplicationContext(), "Ваш заказ принят. Ожидайте", Toast.LENGTH_LONG).show();
-                        finish();
-                    }
-                })
-                .setNegativeButton("Нет", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
+                            MyRefDB.child("order").push().setValue(order);
+                            Toast.makeText(getApplicationContext(), "Ваш заказ принят. Ожидайте", Toast.LENGTH_LONG).show();
+                            finish();
+                        }
+                    })
+                    .setNegativeButton("Нет", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
 
-                    }
-                })
-                .show();
+                        }
+                    })
+                    .show();
+        }
     }
 }

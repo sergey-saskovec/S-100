@@ -33,7 +33,7 @@ public class Order {
         this.type_payment = type_payment;
     }
 
-    /* public String getName() {
+     public String getName() {
         return name;
     }
 
@@ -119,5 +119,5 @@ public class Order {
 
     public void setType_payment(String type_payment) {
         this.type_payment = type_payment;
-    }*/
+    }
 }

@@ -2,28 +2,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.hp.s_100.Fragment.AboutFragment"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingRight="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_vertical_margin">
+    android:paddingLeft="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_vertical_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.hp.s_100.Fragment.AboutFragment">
 
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <TextView
         android:id="@+id/title_about_us"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Информация о разработчике:"
+        android:layout_centerHorizontal="true"
+        android:text="Информация о компании:"
         android:textSize="23sp"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true"/>
+        android:textStyle="bold" />
+
     <TextView
         android:id="@+id/desc_about_us"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/title_about_us"
-        android:text="Данное приложение разработано учащимся Минского Государственного Колледжа Электроники, группы №13 ТП - Сасковцом Сергеем Юрьевичем"
-        android:textSize="20sp"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp"
+        android:text="@string/detail_inform_about"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/prog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/desc_about_us"
+        android:text="О разработчике:"
+        android:textSize="23sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/programmer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/prog"
+        android:layout_marginTop="16dp"
+        android:text="@string/programmer"
+        android:textSize="20sp" />
+    </RelativeLayout>
+</ScrollView>
 
 </RelativeLayout>

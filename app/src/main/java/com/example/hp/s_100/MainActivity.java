@@ -12,13 +12,16 @@ import android.view.MenuItem;
 
 import com.example.hp.s_100.Fragment.AboutFragment;
 import com.example.hp.s_100.Fragment.BlankFragment;
+import com.example.hp.s_100.Fragment.ReferenceFragment;
 import com.example.hp.s_100.Fragment.Services_Fragment;
 import com.example.hp.s_100.Fragment.Shop_Fragment;
 import com.example.hp.s_100.Fragment.SupportFragment;
 import com.example.hp.s_100.Fragment.Wash_Fragment;
 
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
     private String titleBar;
 
 
@@ -41,6 +44,8 @@ public class MainActivity extends AppCompatActivity
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, new BlankFragment()).commit();
         }
+
+
     }
 
     @Override
@@ -97,6 +102,9 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_about) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, new AboutFragment()).commit();
             titleBar = getResources().getString(R.string.about_menu);
+        }else if (id == R.id.nav_reference) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, new ReferenceFragment()).commit();
+            titleBar = getResources().getString(R.string.ref_menu);
         }
         Log.d("TAG", titleBar);
         setActionBarTitle(titleBar);
